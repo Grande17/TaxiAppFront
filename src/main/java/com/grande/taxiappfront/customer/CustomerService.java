@@ -83,4 +83,9 @@ public class CustomerService {
         Customer customer = restTemplate.getForObject("http://localhost:8080/v1/customers/"+id, Customer.class);
         return customer;
     }
+    public void updateEmail(String id, String email){
+        URI url = UriComponentsBuilder.fromHttpUrl("http://localhost:8080/v1/customers/email/"+id+"/"+email)
+                .build().encode().toUri();
+        restTemplate.put(url,null);
+    }
 }

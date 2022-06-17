@@ -18,6 +18,7 @@ public class CustomerView extends VerticalLayout {
     TextField userToDelete = new TextField();
     Button goToMainMenu = new Button("Main menu");
     TextField name = new TextField();
+    Button updateEmail = new Button("Update email");
     CustomerService customerService;
     CustomerForm customerForm;
 
@@ -79,8 +80,9 @@ public class CustomerView extends VerticalLayout {
         updateView.addClickListener(e-> UI.getCurrent().navigate("updateCustomer"));
 
         goToMainMenu.addClickListener(event -> UI.getCurrent().navigate(""));
+        updateEmail.addClickListener(event -> UI.getCurrent().navigate("email"));
 
-        HorizontalLayout toolbar = new HorizontalLayout(filterText,name,userToDelete, delete, updateView, goToMainMenu);
+        HorizontalLayout toolbar = new HorizontalLayout(filterText,name,userToDelete, delete, updateView,updateEmail, goToMainMenu);
         toolbar.addClassName("toolbar");
         return toolbar;
     }
