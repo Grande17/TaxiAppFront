@@ -16,9 +16,7 @@ public class CarView extends VerticalLayout {
 
     Grid<Car> grid = new Grid<>(Car.class);
     TextField filterText = new TextField();
-    TextField userToDelete = new TextField();
     Button goToMainMenu = new Button("Main menu");
-    TextField name = new TextField();
     CarService carService = new CarService();
 
 
@@ -62,7 +60,7 @@ public class CarView extends VerticalLayout {
 
 
 
-        HorizontalLayout toolbar = new HorizontalLayout(filterText,name,userToDelete,updateView,goToMainMenu);
+        HorizontalLayout toolbar = new HorizontalLayout(filterText,updateView,goToMainMenu);
         toolbar.addClassName("toolbar");
         return toolbar;
     }
