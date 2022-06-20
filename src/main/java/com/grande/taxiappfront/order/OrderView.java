@@ -56,9 +56,15 @@ public class OrderView extends VerticalLayout {
             drop.clear();
             customerId.clear();
         });
-
         back.addClickListener(event -> UI.getCurrent().navigate(""));
-
+    }
+    private void validator(){
+        pickUpPlace.setRequired(true);
+        drop.setRequired(true);
+        customerId.setRequired(true);
+        pickUpPlace.setMinLength(1);
+        drop.setMinLength(1);
+        customerId.setMinLength(1);
     }
 
 }

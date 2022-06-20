@@ -72,10 +72,10 @@ public class CustomerForm extends FormLayout {
         surname.setRequired(true);
         username.setRequired(true);
         phoneNumber.setRequired(true);
-        name.setMinLength(3);
-        surname.setMinLength(3);
-        username.setMinLength(5);
-        phoneNumber.setMinLength(9);
+        name.setMinLength(2);
+        surname.setMinLength(2);
+        username.setMinLength(2);
+        phoneNumber.setMinLength(2);
 
     }
 }

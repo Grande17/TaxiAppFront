@@ -43,6 +43,7 @@ public class DriverForm extends FormLayout {
         config();
         saveDriver();
         cancelListener();
+        validator();
 
 
 
@@ -90,5 +91,22 @@ public class DriverForm extends FormLayout {
     }
     private void config(){
         bodyType.setItems("CITY CAR","COUPE","CABRIO","KOMBI","SEDAN","SUV");
+    }
+    private void validator(){
+        name.setRequired(true);
+        surname.setRequired(true);
+        phoneNumber.setRequired(true);
+        carBrand.setRequired(true);
+        model.setRequired(true);
+        bodyType.setRequired(true);
+        plates.setRequired(true);
+
+        name.setMinLength(1);
+        surname.setMinLength(1);
+        phoneNumber.setMinLength(1);
+        carBrand.setMinLength(1);
+        model.setMinLength(1);
+        plates.setMinLength(1);
+
     }
 }

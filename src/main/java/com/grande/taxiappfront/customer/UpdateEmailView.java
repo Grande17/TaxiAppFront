@@ -28,6 +28,7 @@ public class UpdateEmailView extends VerticalLayout {
         setSizeFull();
         setJustifyContentMode(FlexComponent.JustifyContentMode.CENTER);
         setDefaultHorizontalComponentAlignment(FlexComponent.Alignment.CENTER);
+        validator();
     }
 
     private void configuration(){
@@ -36,6 +37,11 @@ public class UpdateEmailView extends VerticalLayout {
             UI.getCurrent().navigate("customer");
         });
         goBack.addClickListener(event -> UI.getCurrent().navigate("customer"));
+    }
+    private void validator(){
+        id.setRequired(true);
+        id.setMinLength(1);
+
     }
 
 }

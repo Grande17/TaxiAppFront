@@ -35,6 +35,7 @@ public class CustomerUpdateView extends VerticalLayout {
         setSizeFull();
         setJustifyContentMode(FlexComponent.JustifyContentMode.CENTER);
         setDefaultHorizontalComponentAlignment(FlexComponent.Alignment.CENTER);
+        validator();
     }
     private void updateCustomer() {
         save.addClickListener(event -> {
@@ -60,4 +61,18 @@ public class CustomerUpdateView extends VerticalLayout {
         });
         back.addClickListener(event -> UI.getCurrent().navigate("customer"));
     }
+    private void validator(){
+        id.setRequired(true);
+        name.setRequired(true);
+        surname.setRequired(true);
+        username.setRequired(true);
+        phoneNumber.setRequired(true);
+        id.setMinLength(1);
+        name.setMinLength(2);
+        surname.setMinLength(2);
+        username.setMinLength(2);
+        phoneNumber.setMinLength(2);
+
+    }
+
 }

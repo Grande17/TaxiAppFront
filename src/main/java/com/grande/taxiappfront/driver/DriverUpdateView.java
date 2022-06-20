@@ -32,6 +32,7 @@ public class DriverUpdateView extends VerticalLayout {
         updateCustomer();
         discardAndBack();
         setSizeFull();
+        validate();
 
         setJustifyContentMode(JustifyContentMode.CENTER);
         setDefaultHorizontalComponentAlignment(Alignment.CENTER);
@@ -58,5 +59,16 @@ public class DriverUpdateView extends VerticalLayout {
             phone.clear();
         });
         back.addClickListener(event -> UI.getCurrent().navigate("driver"));
+    }
+    private void validate(){
+        id.setRequired(true);
+        name.setRequired(true);
+        surname.setRequired(true);
+        phone.setRequired(true);
+
+        id.setMinLength(1);
+        name.setMinLength(1);
+        surname.setMinLength(1);
+        phone.setMinLength(1);
     }
 }

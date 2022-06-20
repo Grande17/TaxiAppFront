@@ -33,6 +33,7 @@ public class UpdateCarView extends VerticalLayout {
         setSizeFull();
         setJustifyContentMode(JustifyContentMode.CENTER);
         setDefaultHorizontalComponentAlignment(Alignment.CENTER);
+        validator();
     }
     private void buttonConfig(){
         save.addClickListener(event -> {
@@ -49,5 +50,18 @@ public class UpdateCarView extends VerticalLayout {
     }
     private void bodyTypeConfig(){
         bodyType.setItems("CITY CAR","COUPE","CABRIO","KOMBI","SEDAN","SUV");
+    }
+
+    private void validator(){
+        id.setRequired(true);
+        carBrand.setRequired(true);
+        model.setRequired(true);
+        bodyType.setRequired(true);
+        registration.setRequired(true);
+        id.setMinLength(1);
+        carBrand.setMinLength(1);
+        model.setMinLength(1);
+        registration.setMinLength(1);
+
     }
 }
